@@ -8,4 +8,4 @@ bcrypt==4.1.3
 firebase==4.0.1
 firebase_admin==6.5.0
 requests
-streamlit_state==0.1.0
+streamlit_state
