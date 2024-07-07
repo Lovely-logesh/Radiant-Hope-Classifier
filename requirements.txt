@@ -10,3 +10,4 @@ firebase_admin==6.5.0
 requests
 streamlit_state
 streamlit_scriptrunner
+python
