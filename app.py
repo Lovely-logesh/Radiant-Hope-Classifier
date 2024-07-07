@@ -15,7 +15,7 @@ st.set_page_config(page_title='BT CLASSIFIER')
 #Creating a  login page
 st.title(' Welcome to :violet[RadiantHope Classifier]')
 import hashlib
-from streamlit.state import SessionState
+from streamlit_state import SessionState
 
 # Hardcoded username and password for demonstration
 USERS = {
