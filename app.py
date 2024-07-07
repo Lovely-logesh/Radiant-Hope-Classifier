@@ -250,14 +250,14 @@ def login(username, password):
         st.error("Incorrect username or password")
 
 def logout():
-session_state.logged_in = False
-session_state.username = ""
-st.success("Logged Out")
+    session_state.logged_in = False
+    session_state.username = ""
+    st.success("Logged Out")
 
 def main():
-st.title("Login Page")
-global session_state
-session_state = SessionState.get(logged_in=False, username="")
+    st.title("Login Page")
+    global session_state
+    session_state = SessionState.get(logged_in=False, username="")
 
 # Create sidebar for login
 st.sidebar.header("Login")
