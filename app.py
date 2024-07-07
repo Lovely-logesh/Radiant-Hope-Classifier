@@ -19,8 +19,8 @@ import streamlit as st
 import hashlib
 
 # Hardcoded username and password for demonstration
-CORRECT_USERNAME = "Survivor"
-CORRECT_PASSWORD = "admin"
+CORRECT_USERNAME = {"Survivor","Admin","User"}
+CORRECT_PASSWORD = {"admin","123","asdf"}
 
 def main():
     st.title("Login Page")
@@ -37,8 +37,9 @@ def main():
         hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
 # Simple authentication
-        if username == CORRECT_USERNAME and hashed_password == hashlib.sha256(CORRECT_PASSWORD.encode()).hexdigest():
+        if username in CORRECT_USERNAME and hashed_password in hashlib.sha256(CORRECT_PASSWORD.encode()).hexdigest():
             st.success("Logged In as {}".format(username))
+            st.balloons()
 # IMPORTING DEPENDENCIES
             import numpy as np
             import pandas as pd
