@@ -17,7 +17,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 if not firebase_admin._apps:  # Check if app is already initialized
-    cred = credentials.Certificate('path/to/serviceAccountKey.json')
+    cred = credentials.Certificate('radiant-hope-classifier-7c21d8a2f258.json')
     firebase_admin.initialize_app(cred)
 
 #Creating a  login page
@@ -70,6 +70,7 @@ with col2:
 
 #Creating button and insert dataset in it
 dingdong = st.checkbox('DataSet')
+#
 if dingdong:
   st.dataframe(data_frame)  
 
