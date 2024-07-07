@@ -277,7 +277,7 @@ else:
     st.warning("Please log in")
 
 if __name__ == "__main__":
-main()
+    main()
   
 
 
