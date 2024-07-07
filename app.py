@@ -17,7 +17,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 cred = credentials.Certificate('radiant-hope-classifier-7c21d8a2f258.json')
-app = firebase_admin.initialize_app(cred)
+firebase_admin.get_app(cred)
 
 #Creating a  login page
 st.title(' Welcome to :violet[RadiantHope Classifier]')
