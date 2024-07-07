@@ -17,7 +17,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 if not firebase_admin._apps:  # Check if app is already initialized
-    cred = credentials.Certificate('radiant-hope-classifier-7c21d8a2f258.json')
+    cred = credentials.Certificate('https://github.com/Lovely-logesh/Radiant-Hope-Classifier/blob/main/radiant-hope-classifier-04d8c39ee420.json')
     firebase_admin.initialize_app(cred)
 
 #Creating a  login page
