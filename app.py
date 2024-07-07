@@ -32,7 +32,7 @@ else:
     password = st.text_input('Password', type='password')
     username = st.text_input('Enter Your Elegant User Name')
     if st.button('Create My Account'):
-        user = firebase_admin.auth.create_user(email , password)
+        user = auth.create_user(email , password)
         st.success('Account Created Sucessfully')    
         st.markdown('Please Login Using Your Email and Password')     
 # IMPORTING DEPENDENCIES
