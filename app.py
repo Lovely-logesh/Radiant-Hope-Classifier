@@ -12,29 +12,41 @@ img = Image.open('girl.jpg')
 #tabs row title
 st.set_page_config(page_title='BT CLASSIFIER')
 
-#Importing Firebase
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import auth
-if not firebase_admin._apps:  # Check if app is already initialized
-    cred = credentials.Certificate('radiant-hope-classifier-04d8c39ee420.json')
-    firebase_admin.initialize_app(cred)
-
 #Creating a  login page
 st.title(' Welcome to :violet[RadiantHope Classifier]')
-choice = st.selectbox('Login/Signup', ['Login','Signup'])
-if choice =='Login':
-    email = st.text_input('Email Address')
-    password = st.text_input('Password', type='password') 
-    st.button('Login')
-else:
-    email = st.text_input('Email Address')
-    password = st.text_input('Password', type='password')
-    username = st.text_input('Enter Your Elegant User Name')
-    if st.button('Create My Account'):
-        user = auth.create_user(email , password)
-        st.success('Account Created Sucessfully')    
-        st.markdown('Please Login Using Your Email and Password')     
+
+import streamlit as st
+from streamlit_github_auth import GitHubOAuth
+
+# Initialize GitHubOAuth with your client ID and client secret
+github_oauth = GitHubOAuth(client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET")
+
+def main():
+    st.title("GitHub Login Example")
+
+    if st.button("Login with GitHub"):
+        # Redirect to GitHub OAuth flow
+        auth_url, state = github_oauth.authorization_url()
+        return st.redirect(auth_url)
+
+    # Once redirected back from GitHub OAuth
+    if "code" in st.request.query_params:
+        code = st.request.query_params["code"]
+        github_oauth.fetch_token(code=code)
+
+        # Get user information
+        user_info = github_oauth.get_user_info()
+        st.write(f"Logged in as: {user_info['login']}")
+        st.write(f"Name: {user_info['name']}")
+        st.write(f"Avatar URL: {user_info['avatar_url']}")
+        st.write(f"Email: {user_info['email']}")
+        st.write("You can now securely access your app.")
+
+if __name__ == "__main__":
+    main()
+
+
+
 # IMPORTING DEPENDENCIES
 import numpy as np
 import pandas as pd
