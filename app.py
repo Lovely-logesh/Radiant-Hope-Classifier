@@ -19,8 +19,8 @@ import streamlit as st
 import hashlib
 
 # Hardcoded username and password for demonstration
-CORRECT_USERNAME = "BC Survivor,Logesh"
-CORRECT_PASSWORD = "password,panda"
+CORRECT_USERNAME = "Survivor"
+CORRECT_PASSWORD = "admin"
 
 def main():
     st.title("Login Page")
