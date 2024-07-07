@@ -16,7 +16,9 @@ st.set_page_config(page_title='BT CLASSIFIER')
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
-cred = credentials.Certificate('radiant-hope-classifier-7c21d8a2f258.json')
+if not firebase_admin._apps:  # Check if app is already initialized
+    cred = credentials.Certificate('path/to/serviceAccountKey.json')
+    firebase_admin.initialize_app(cred)
 
 #Creating a  login page
 st.title(' Welcome to :violet[RadiantHope Classifier]')
