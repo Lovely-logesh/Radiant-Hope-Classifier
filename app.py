@@ -260,10 +260,5 @@ def main():
 
 #if __name__ == "__main__":
     #main()
-class SessionState:
-    def __init__(self):
-        self.username = None
-        self.logged_in = False
-# Create an instance of SessionState
-session_state = SessionState()
+
 
