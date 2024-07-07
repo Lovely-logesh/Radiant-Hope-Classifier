@@ -232,7 +232,7 @@ def main():
             prediction = model.predict(input_data_std)
             print(prediction)
             prediction_label = [np.argmax(prediction)]
-            Predict = st.button('CLASSIFY')
+            Predict = st.form_submit_button('CLASSIFY')
             if Predict:
                 if(prediction_label[0] == 0):
                     st.error(f"The predicted tumor type is: MALIGNANT. You have to take more care about your Breast Health ")
@@ -258,5 +258,12 @@ def main():
         else:
             st.error("Incorrect username or password")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #main()
+class SessionState:
+    def __init__(self):
+        self.username = None
+        self.logged_in = False
+# Create an instance of SessionState
+session_state = SessionState()
+
