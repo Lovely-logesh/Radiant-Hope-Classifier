@@ -271,7 +271,7 @@ if st.sidebar.button("Login"):
     if session_state.get('logged_in', False):
         st.write(f"Welcome, {session_state.username}")
         if st.button("Logout"):
-        logout()
+            logout()
 else:
     st.warning("Please log in")
 
