@@ -2,7 +2,7 @@
 #!pip install streamlit -q
 #importing streamlit
 import streamlit as st
-from streamlit import SessionState
+#from streamlit import SessionState
 
 #image or logo
 from PIL import Image
