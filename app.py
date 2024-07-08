@@ -267,8 +267,8 @@ password = st.sidebar.text_input("Password", type="password")
 
 if st.sidebar.button("Login"):
     login(username, password)
-
-if session_state.logged_in(True):
+if session_state.get('logged_in', False):  # Check if 'logged_in' key exists, default False
+    # Do something if user is logged in
     st.write(f"Welcome, {session_state.username}")
     if st.button("Logout"):
         logout()
