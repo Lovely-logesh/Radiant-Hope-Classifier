@@ -24,6 +24,15 @@ USERS = {
     "User": "3ef80ca059b60870736b4b1ca76a3e59f20ca2e3e13c07fcbcd7f8892f27571d",    # Hash of "admin"
 }
 
+class SessionState:
+    def __init__(self):
+        self.logged_in = False
+        self.username = ""
+
+# Initialize session state
+session_state = SessionState()
+
+
 def login(username, password):
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     if username in USERS and hashed_password == USERS[username]:
