@@ -271,8 +271,8 @@ if st.sidebar.button("Login"):
         st.write(f"Welcome, {session_state.username}")
         if st.button("Logout"):
             logout()
-else:
-    st.warning("Please log in")
+        else:
+            st.warning("Please log in")
 
 if __name__ == "__main__":
     main()
