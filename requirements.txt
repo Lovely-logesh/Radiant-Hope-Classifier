@@ -9,4 +9,4 @@ firebase==4.0.1
 firebase_admin==6.5.0
 requests
 streamlit_state
-python
+python==3.12.4
