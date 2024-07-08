@@ -277,12 +277,12 @@ password = st.sidebar.text_input("Password", type="password")
 
 if st.sidebar.button("Login"):
     login(username, password)
-if session_state.get('logged_in', False):
-    st.write(f"Welcome, {session_state.username}")
-    if st.button("Logout"):
-        logout()
 else:
     st.warning("Please log in")
+# Logout button
+if session_state.logged_in:
+    if st.button("Logout"):
+        logout()
 
 if __name__ == "__main__":
     main()
