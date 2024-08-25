@@ -14,7 +14,7 @@ img = Image.open('girl.jpg')
 st.set_page_config(page_title='BT CLASSIFIER')
 
 #Creating a  login page
-st.title(' Welcome to :violet[RadiantHope Classifier]')
+st.title(' Welcome to : RadiantHope Classifier')
 import hashlib
 
 # Hardcoded username and password for demonstration
